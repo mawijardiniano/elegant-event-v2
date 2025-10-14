@@ -5,9 +5,7 @@ const { registerAdmin, loginAdmin, getAllAdmins, getAdminByID, updateAdmin, dele
 const {verifyToken} = require('../middleware/verifyToken');
 const {requireRole} = require('../middleware/role');
 
-// Register a new admin
 router.post('/register', verifyToken, requireRole('admin'), registerAdmin);
-// Admin login
 router.post('/login', loginAdmin); 
 
 router.get('/admins', verifyToken, requireRole('admin'), getAllAdmins);
