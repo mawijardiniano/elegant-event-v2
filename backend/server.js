@@ -4,9 +4,10 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 
 const authRouter = require("./routes/auth.routes");
-const eventRouter = require('./routes/event.routes');
-const packageRouter = require('./routes/package.routes');
-const serviceRouter = require('./routes/service.routes')
+const eventRouter = require("./routes/event.routes");
+const packageRouter = require("./routes/package.routes");
+const serviceRouter = require("./routes/service.routes");
+const tagRouter = require("./routes/tag.routes");
 
 require("dotenv").config();
 
@@ -28,12 +29,11 @@ app.get("/test-db", async (req, res) => {
   }
 });
 
-
-
 app.use("/auth", authRouter);
-app.use('/event', eventRouter);
-app.use('/package', packageRouter);
-app.use('/service', serviceRouter);
+app.use("/event", eventRouter);
+app.use("/package", packageRouter);
+app.use("/service", serviceRouter);
+app.use("/tag", tagRouter);
 
 const PORT = 5000 || process.env.PORT;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
