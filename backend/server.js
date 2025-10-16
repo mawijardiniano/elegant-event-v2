@@ -8,7 +8,8 @@ const eventRouter = require("./routes/event.routes");
 const packageRouter = require("./routes/package.routes");
 const serviceRouter = require("./routes/service.routes");
 const tagRouter = require("./routes/tag.routes");
-const venueRouter = require('./routes/venue.routes')
+const venueRouter = require("./routes/venue.routes");
+const bookingRouter = require("./routes/booking.routes");
 
 require("dotenv").config();
 
@@ -35,7 +36,8 @@ app.use("/event", eventRouter);
 app.use("/package", packageRouter);
 app.use("/service", serviceRouter);
 app.use("/tag", tagRouter);
-app.use('/venue',venueRouter)
+app.use("/venue", venueRouter);
+app.use("/booking", bookingRouter);
 
 const PORT = 5000 || process.env.PORT;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));
