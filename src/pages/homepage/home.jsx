@@ -1,16 +1,26 @@
-import React from 'react'
-import Hero from './component/hero'
-import Contact from './component/contact'
+import React from "react";
+import Hero from "./component/hero";
+import Contact from "./component/contact";
+import Venue from "./component/venue";
+import Services from "./component/service";
+import Layout from "../../components/layout/layout";
 
 export default function Home() {
   return (
-    <div>
+    <Layout>
       <section>
-        <Hero/>
+        <Hero />
+      </section>
+      <section className="mt-10">
+        <Venue />
       </section>
       <section>
-        <Contact/>
+        <Services />
       </section>
-    </div>
-  )
+
+      <section>
+        <Contact />
+      </section>
+    </Layout>
+  );
 }

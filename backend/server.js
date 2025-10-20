@@ -15,7 +15,21 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: function (origin, callback) {
+    const allowedOrigins = [
+      'http://localhost:5173',
+    ];
+    if (!origin) return callback(null, true);
+
+    if (allowedOrigins.includes(origin)) {
+      return callback(null, true);
+    } else {
+      return callback(new Error('CORS policy: Not allowed by CORS'), false);
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
 
 connectDB();

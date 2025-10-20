@@ -2,7 +2,7 @@ const Tag = require("../models/tag");
 const Venue = require("../models/venue");
 
 const getAllVenue = async () => {
-  const venue = await Venue.find();
+  const venue = await Venue.find().populate("venue_tag");
   return venue;
 };
 
