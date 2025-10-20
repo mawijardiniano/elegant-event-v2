@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const { type } = require("os");
 
 const packageSchema = new mongoose.Schema({
   pkg_name: {
@@ -7,7 +6,7 @@ const packageSchema = new mongoose.Schema({
     required: true,
   },
   pkg_price: {
-    type: String,
+    type: Number,
     required: true,
   },
   pkg_desc: {

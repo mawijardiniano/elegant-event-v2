@@ -1,14 +1,14 @@
 const packageModel = require("../models/package");
 
-const createPackage = async (pkg_name, pkg_desc, pkg_price, features) => {
+const createPackage = async (pkg_name, pkg_price, pkg_desc, features) => {
   const package = await packageModel.findOne({ pkg_name });
 
   if (package) throw new Error("Package already exist");
 
   const newPackage = new packageModel({
     pkg_name,
-    pkg_desc,
     pkg_price,
+    pkg_desc,
     features,
   });
   await newPackage.save();
@@ -21,11 +21,11 @@ const getAllPackage = async () => {
 };
 
 const updatePackage = async (id, updates) => {
-  const { pkg_name, pkg_desc, pkg_price, features } = updates;
+  const { pkg_name, pkg_price, pkg_desc, features } = updates;
 
   const pkg = await packageModel.findByIdAndUpdate(
     id,
-    { pkg_name, pkg_desc, pkg_price, features },
+    { pkg_name, pkg_price, pkg_desc, features },
     { new: true }
   );
 
@@ -34,11 +34,11 @@ const updatePackage = async (id, updates) => {
   return pkg;
 };
 
-const deletePackage = async(id) => {
-    const pkg = await packageModel.findByIdAndDelete(id);
+const deletePackage = async (id) => {
+  const pkg = await packageModel.findByIdAndDelete(id);
 
-    if(!pkg) throw new Error("Package not found")
-    return pkg
-}
+  if (!pkg) throw new Error("Package not found");
+  return pkg;
+};
 
-module.exports = { createPackage, getAllPackage, updatePackage , deletePackage};
+module.exports = { createPackage, getAllPackage, updatePackage, deletePackage };

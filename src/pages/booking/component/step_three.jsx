@@ -21,7 +21,7 @@ import {
 import { z } from "zod";
 
 const guestInfoSchema = z.object({
-  event_name: z.string().min(1, "Event type is required"),
+  event_type: z.string().min(1, "Event type is required"),
   expected_guest: z
     .string()
     .min(1, "Guest count is required")
@@ -48,7 +48,7 @@ export default function StepThree() {
    
   ) => {
     const formData = {
-      event_name: selectedEvent?.event_name || "",
+      event_type: selectedEvent?.event_name || "",
       expected_guest: guestCount,
       event_name: eventName,
       description,
@@ -64,7 +64,7 @@ export default function StepThree() {
 
   const handleContinue = () => {
     setTouched({
-      event_name: true,
+      event_type: true,
       expected_guest: true,
       event_name: true,
     });
@@ -111,7 +111,7 @@ export default function StepThree() {
 
       <ProgressComponent step={3} totalSteps={8} />
 
-      <div className="min-w-[800px] bg-white shadow-md rounded-lg p-6 border border-gray-100">
+      <div className="min-w-[800px] bg-white rounded-lg p-6 border border-gray-200">
         <h1 className="font-bold text-2xl">Event Details</h1>
         <p className="text-gray-600 mt-1">
           Tell us more about your event so we can provide the best service.
