@@ -72,7 +72,7 @@ export default function StepThree() {
     if (!validateForm()) return;
 
     const payload = {
-      event_type: selectedEvent.event_name,
+      event_type: selectedEvent._id,
       expected_guest: parseInt(guestCount),
       event_name: eventName,
       description,

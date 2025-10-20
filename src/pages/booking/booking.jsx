@@ -5,7 +5,7 @@ import StepThree from "../booking/component/step_three";
 import StepFour from "../booking/component/step_four";
 import StepFive from "../booking/component/step_five";
 import StepSix from "../booking/component/step_six";
-// import StepSeven from "@/pages/booking/components/stepSeven";
+import StepSeven from "../booking/component/step_seven";
 import Layout from "../../components/layout/layout";
 // import StepEight from "./components/stepEight";
 

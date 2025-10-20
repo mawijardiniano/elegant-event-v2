@@ -10,6 +10,7 @@ const serviceRouter = require("./routes/service.routes");
 const tagRouter = require("./routes/tag.routes");
 const venueRouter = require("./routes/venue.routes");
 const bookingRouter = require("./routes/booking.routes");
+const paymentRouter = require('./routes/payment.routes')
 
 require("dotenv").config();
 
@@ -52,6 +53,7 @@ app.use("/service", serviceRouter);
 app.use("/tag", tagRouter);
 app.use("/venue", venueRouter);
 app.use("/booking", bookingRouter);
+app.use("/payment", paymentRouter)
 
 const PORT = 5000 || process.env.PORT;
 app.listen(PORT, () => console.log(`🚀 Server running on port ${PORT}`));

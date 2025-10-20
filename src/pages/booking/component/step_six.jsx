@@ -1,4 +1,3 @@
-
 import ProgressComponent from "./progress";
 import { useSelector, useDispatch } from "react-redux";
 import { formatted } from "../../../lib/dateFormat";
@@ -28,7 +27,7 @@ export default function StepSix() {
   const pkg = useSelector((state) => state.booking.package);
   const services = useSelector((state) => state.booking.service || []);
 
-  let startDate= null;
+  let startDate = null;
   if (bookingDate?.booking_date) {
     startDate = new Date(bookingDate.booking_date);
   }
@@ -103,7 +102,6 @@ export default function StepSix() {
               <strong>Event Name:</strong> {event?.event_name}
             </p>
           </div>
-
 
           <div className="border border-gray-200 p-4 w-96 rounded-md">
             <h2 className="font-bold text-xl mb-4">Contact Information</h2>

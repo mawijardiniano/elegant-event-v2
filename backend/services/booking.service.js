@@ -1,7 +1,7 @@
 const Booking = require("../models/booking");
 
 const getAllBooking = async () => {
-  const booking = await Booking.find();
+  const booking = await Booking.find().populate("venue").populate("package").populate("event");
   return booking;
 };
 

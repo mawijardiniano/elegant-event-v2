@@ -5,7 +5,7 @@ const {verifyToken} = require('../middleware/verifyToken');
 const {requireRole} = require('../middleware/role')
 
 router.get('/', getAllBooking)
-router.post('/', verifyToken, requireRole('admin'), createBooking);
+router.post('/', createBooking);
 router.put('/:id', verifyToken, requireRole('admin'), updateBooking)
 router.delete('/:id', verifyToken, requireRole('admin'), deleteBooking)
 
