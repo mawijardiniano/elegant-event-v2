@@ -7,7 +7,7 @@ import StepFive from "../booking/component/step_five";
 import StepSix from "../booking/component/step_six";
 import StepSeven from "../booking/component/step_seven";
 import Layout from "../../components/layout/layout";
-// import StepEight from "./components/stepEight";
+import StepEight from "../booking/component/step_eigth";
 
 export default function Booking() {
   const currentStep = useSelector((state) => state.booking.currentStep);
