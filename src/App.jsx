@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Homepage from "./pages/homepage/home";
 import Venue from "./pages/venue/venue";
-import Admin from "./admin/auth/auth";
-import Dashboard from "./admin/dashboard/dashboard";
+import Admin from "./admin/pages/auth/auth";
+import Dashboard from "./admin/pages/dashboard/dashboard";
 import Booking from "./pages/booking/booking";
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
