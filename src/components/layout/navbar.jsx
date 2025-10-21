@@ -48,7 +48,7 @@ export default function Navbar() {
         <h1 className="font-bold text-lg">Elegant Event</h1>
         <ul className="flex gap-8">
           <li><button onClick={handleHomeClick}>Home</button></li>
-          <li><Link to="/booking">Venues</Link></li>
+          <li><Link to="/venue">Venues</Link></li>
           <li><button onClick={() => handleNavClick("service")}>Services</button></li>
           <li><button onClick={() => handleNavClick("contact")}>Contacts</button></li>
         </ul>
